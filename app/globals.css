@@ -2,26 +2,187 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body {
+  background: url('../public/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1{
+  color: #413C5F;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+p{
+  color: #817CA5;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.form{
+  display: flex;
+  width: 400px;
+  padding: 40px 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+  border-radius: 20px;
+  background: #817CA5;
+}
+
+label{
+  color: #FFF;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+input{
+  display: flex;
+  padding: 8px 12px 8px 16px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 211px;
+  align-self: stretch;
+  width: 100%;
+  color: #413C5F;
+}
+
+input:focus{
+  outline: none;
+}
+
+input::placeholder{
+  color: #C0BCDF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+Select{
+  display: flex;
+  padding: 8px 12px 8px 12px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 211px;
+  align-self: stretch;
+  width: 100%;
+}
+
+Select p{
+  color: #C0BCDF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+#continue{
+  display: flex;
+  height: 60px;
+  padding: 16px 0px 15px 0px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+}
+
+.enabled{
+  color: #413C5F;
+  background: #FFF;
+}
+
+.disabled{
+  color: #8B85B1;
+  background: #A39FC1;
+
+}
+
+.inputField{
+  position: relative;
+  width: 100%;
+}
+
+.error-text{
+color: #DA2121;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+margin-top: 8px;
+line-height: 16px;
+}
+
+.error-icon{
+  position: absolute;
+  right: 12px;
+  bottom: 36px;
+  width: 16px;
+  height: 16px;
+  background-image: url('../public/error-icon.svg');
+}
+
+.step{
+  display: flex;
+  gap: 12px;
+}
+
+.step p {
+  color: #817CA5;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.step-box{
+  width: 16px;
+  height: 16px;
+  background-color: #C9C5E8;
+  border-radius: 2px;
+}
+
+.step-box.active{
+  background-color: #5845DD;
+}
+.step-box.completed{
+  background-color: #87839F;
+}
+
+.review-text{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.review-text p{
+  color: #CECAEB;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.review-text p:nth-child(2){
+  color: #fff;
+  font-weight: 500;
 }
